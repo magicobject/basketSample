@@ -32,4 +32,13 @@ public final class Product {
         result = 31 * result + price;
         return result;
     }
+
+    @Override
+    public boolean equals(Object product) {
+        if (product.getClass() != Product.class) {
+            return false;
+        }
+        Product compareProduct = (Product)product;
+        return compareProduct.name.equals(name) && compareProduct.price == price;
+    }
 }
